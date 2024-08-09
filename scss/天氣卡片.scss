@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 10px darkcyan;
+
+    .location-btn-all {
+        padding: 10px;
+        display: flex;
+        column-gap: 10px;
+
+        button {
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            border-radius: 10px;
+            padding: 15px 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(to top, #2F80ED, #56CCF2);
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+
+    .container {
+        width: 100%;
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+
+        .card {
+            width: 350px;
+            height: 450px;
+            perspective: 1000px;
+
+            &:hover .flip-card-container {
+                transform: rotateY(180deg);
+            }
+
+            .flip-card-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform 0.8s;
+
+                .card-front,
+                .card-back {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    backface-visibility: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: white;
+                    border-radius: 20px;
+                    box-shadow: 3px 3px 10px darkcyan;
+                }
+
+                .card-front {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    .cityName {
+                        font-size: 36px;
+                        font-weight: bold;
+                    }
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
+
+                    .Wx {
+                        font-size: 28px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                    }
+                }
+
+                .card-back {
+                    transform: rotateY(180deg);
+                    position: relative;
+                    overflow: hidden;
+
+                    .rainfall {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        overflow: hidden;
+
+                        .wave {
+                            background-color: #2F80ED;
+                            position: absolute;
+                            bottom: 0;
+                            height: 1000%;
+                            width: 1000%;
+                            opacity: 0.6;
+                            animation: wave 3s infinite linear;
+                        }
+                    }
+
+                    .card-back-content {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+
+                        .weather-data {
+                            .PoP,
+                            .MaxT,
+                            .MinT,
+                            .CI {
+                                font-size: 24px;
+                                margin: 5px 0;
+                            }
+                        }
+
+                        .time {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(15px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}

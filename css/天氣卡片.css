@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 5px 10px darkcyan;
+}
+nav .location-btn-all {
+  padding: 10px;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+nav .location-btn-all button {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+nav .location-btn-all button:hover {
+  background: linear-gradient(to top, #2F80ED, #56CCF2);
+}
+
+main {
+  display: flex;
+}
+main .container {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+main .container .card {
+  width: 350px;
+  height: 450px;
+  perspective: 1000px;
+}
+main .container .card:hover .flip-card-container {
+  transform: rotateY(180deg);
+}
+main .container .card .flip-card-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+main .container .card .flip-card-container .card-front,
+main .container .card .flip-card-container .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px darkcyan;
+}
+main .container .card .flip-card-container .card-front {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .container .card .flip-card-container .card-front .cityName {
+  font-size: 36px;
+  font-weight: bold;
+}
+main .container .card .flip-card-container .card-front img {
+  width: 150px;
+  height: 150px;
+}
+main .container .card .flip-card-container .card-front .Wx {
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container .card .flip-card-container .card-back {
+  transform: rotateY(180deg);
+  position: relative;
+  overflow: hidden;
+}
+main .container .card .flip-card-container .card-back .rainfall {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+main .container .card .flip-card-container .card-back .rainfall .wave {
+  background-color: #2F80ED;
+  position: absolute;
+  bottom: 0;
+  height: 1000%;
+  width: 1000%;
+  opacity: 0.6;
+  animation: wave 3s infinite linear;
+}
+main .container .card .flip-card-container .card-back .card-back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main .container .card .flip-card-container .card-back .card-back-content .weather-data .PoP,
+main .container .card .flip-card-container .card-back .card-back-content .weather-data .MaxT,
+main .container .card .flip-card-container .card-back .card-back-content .weather-data .MinT,
+main .container .card .flip-card-container .card-back .card-back-content .weather-data .CI {
+  font-size: 24px;
+  margin: 5px 0;
+}
+main .container .card .flip-card-container .card-back .card-back-content .time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-25%) translateY(15px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}/*# sourceMappingURL=天氣卡片.css.map */

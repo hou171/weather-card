@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天氣卡片</title>
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/天氣卡片.css">
+    <link rel="stylesheet" href="./css/時鐘.css">
+    <link href="https://db.onlinewebfonts.com/c/84cb021d5f9af287ffff84b61beef6dc?family=clockicons" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <section class="logo">
+            <img src="./img/cloud.png" alt="LOGO" style="width: 100px; height: 100px;">
+        </section>
+        <section class="location-btn-all">
+            <button type="button">全部地區</button>
+            <button type="button">北部地區</button>
+            <button type="button">中部地區</button>
+            <button type="button">南部地區</button>
+            <button type="button">東部地區</button>
+            <button type="button">離島地區</button>
+        </section>
+        <section class="clock-container">
+            <time class="date"></time>
+            <time class="clock"></time>
+        </section>
+    </nav>
+
+    <main>
+        <div class="container">
+        </div>
+    </main>
+
+    <script src="./js/天氣卡片.js"></script>
+    <script src="./js/時鐘.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

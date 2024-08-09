@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+nav .clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "clockicons";
+  color: black;
+  background-color: #fff;
+}
+nav .clock-container .date {
+  display: block;
+  font-size: 18px;
+}
+nav .clock-container .clock {
+  font-size: 40px;
+}/*# sourceMappingURL=時鐘.css.map */

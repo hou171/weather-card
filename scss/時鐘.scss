@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+
+    .clock-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'clockicons';
+        color: black;
+        background-color: #fff;
+
+        .date {
+            display: block;
+            font-size: 18px;
+        }
+
+        .clock {
+            font-size: 40px;
+        }
+    }
+}
